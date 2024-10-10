@@ -1,0 +1,39 @@
+OSA 0 tehtävä 0.4
+
+
+Save- napin käyttö uuden noten tekemiseen suorittaa URL- pyynnön osoitteeseen https://studies.cs.helsinki.fi/exampleapp/new_note
+
+Koodin status on 302 ja Request Method- status on POST eikä GET, kuten muissa funktiossa olevat ehtojen statukset, joten palvelin uudelleenohjautuu new_noten Locationiin eli /exampleapp/notes.
+
+Muut sivuston tiedostot latautuvat myös ja ovat muuttumattomia eikä POST- toiminnolla suoritetut muistiinpanot tallennu palvelimen tietokantaan.
+
+- Serveri aktivoituu ja lähettää HTML- dokumentin selaimelle
+- Selain lähettää kaikista tarvittavista tiedostoista GET- pyynnöt serverille ja serveri prosessoi nämä yksi kerrallaan ja lähettää ne takaisin selaimelle.
+
+
+Tehtävä 0.5
+
+- Selain -> Serveri : Request URL: https://studies.cs.helsinki.fi/exampleapp/spa
+- Serveri -> Selain : HTML- dokumentin tuominen
+
+- Selain -> Serveri : Request URL: https://studies.cs.helsinki.fi/exampleapp/main.css
+- Serveri -> Selain : main.css- tiedoston tuominen 
+
+- Selain -> Serveri : Request URL: https://studies.cs.helsinki.fi/exampleapp/spa.js
+- Serveri -> Selain : Spa.js- tiedoston tuominen
+(Selain aloittaa tiedoston käsittelyn)
+
+- Selain -> Serveri : Request URL: https://studies.cs.helsinki.fi/exampleapp/data.json
+- Serveri -> Selain : Data.json- tiedoston tuominen
+(Selain suorittaa Callback- funktion tietojen renderöimiseen)
+
+
+Tehtävä 0.6
+- Selain pysyy samalla sivulla ja ei suorita aiemmassa tehtävässä mainittuja pyyntöjä
+- Statuskoodina toiminnolla on 201 Created eli luominen.
+- Tietojen lähetys on JavaScript- tiedostossa määritelty.
+
+- document.getElementById- koodi hakee sivulta lomake-elementin ja rekisteröi sille tapahtumankäsittelijän hoitamaan tilanteen, jossa lomake lähetetään.
+- preventDefault- funktio estää oletusarvojen palauttamisen.
+- koodi lisää uuden noten listalle notes.push- funktiolla ja lähettää sen palvelimelle JSON- muodossa.
+ 
